@@ -1,1 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Dashboard</title>
+
+    <!--Google Fonts Link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!--CSS Style sheet link-->
+    <style>
+      * {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.dashboard-container {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: repeat(1fr, 2);
+}
+
+.result {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgb(63, 84, 241);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    box-shadow: rgba(3, 33, 142, 0.35) 0px 5px 15px;
+}
+
+.result h3 {
+    text-align: center;
+    color: rgb(212, 212, 212);
+    margin-bottom: 0%;
+}
+
+.cricle {
+    width: 170px;
+    height: 170px;
+    background-color: blue;
+    border-radius: 50%;
+    display: grid;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(3, 33, 142, 0.35) 0px 5px 15px;
+}
+
+
+.cricle h1 {
+    text-align: center;
+    display: inline-block;
+    font-size: 60px;
+    color: white;
+    margin-bottom: 0%;
+}
+
+.cricle p {
+    text-align: center;
+    margin: 0%;
+    position: relative;
+    bottom: 10px;
+    color: lightgray;
+    font-weight: 700;
+}
+
+.result h2 {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 40px;
+    font-size: 30px;
+}
+
+.result-desription {
+    width: 70%;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px auto;
+    position: relative;
+    top: 30px;
+}
+
+.summary {
+    width: 100%;
+    height: 100%;
+    grid-row: 2 / 3;
+}
+
+.summary h2 {
+    font-size: 25px;
+    margin: 0 0px 0px 30px;
+    position: relative;
+    top: 160px;
+}
+
+.reaction {
+    width: 80%;
+    height: 60px;
+    display: grid;
+    justify-self: center;
+    position: relative;
+    margin: 0px auto;
+    top: 180px;
+    background-color: rgb(252, 225, 229);
+    border-radius: 5px;
+    grid-template-columns: repeat(30px, 1fr, 50px);
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.reaction img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-left: 30px;
+}
+
+.reaction p {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0px;
+    margin-right: 0px;
+    color: rgb(255, 117, 117);
+    font-weight: 700;
+    font-size: 22px;
+    text-align: left;
+    margin-right: 60px;
+}
+
+.reaction .marks {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    color: darkblue;
+    font-weight: 800;
+    font-size: 22px;
+
+}
+
+.reaction .marks span {
+    color: gray;
+}
+
+
+.memory {
+    width: 80%;
+    height: 60px;
+    display: grid;
+    justify-self: center;
+    position: relative;
+    top: 200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 217);
+    border-radius: 5px;
+    grid-template-columns: repeat(30px, 1fr, 50px);
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.memory img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-left: 30px;
+}
+
+.memory p {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0px;
+    margin-right: 0px;
+    color: #fecc00;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: left;
+    margin-right: 60px;
+}
+
+.memory .marks {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    color: darkblue;
+    font-weight: 800;
+    font-size: 22px;
+
+}
+
+.memory .marks span {
+    color: gray;
+}
+
+
+.verbal {
+    width: 80%;
+    height: 60px;
+    display: grid;
+    justify-self: center;
+    position: relative;
+    top: 220px;
+    margin: 0px auto;
+    border-radius: 5px;
+    background-color: rgb(236, 255, 203);
+    grid-template-columns: repeat(30px, 1fr, 50px);
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.verbal img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-left: 30px;
+}
+
+.verbal p {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0px;
+    margin-right: 0px;
+    color: #05cd05;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: left;
+    margin-right: 60px;
+}
+
+.verbal .marks {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    color: darkblue;
+    font-weight: 800;
+    font-size: 22px;
+
+}
+
+.verbal .marks span {
+    color: gray;
+}
+
+button {
+    width: 70%;
+    height: 65px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: darkblue;
+    color: white;
+    position: relative;
+    top: 250px;
+    margin: 0px auto;
+    display: grid;
+    font-size: 25px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: blue;
+    color: white;
+    box-shadow: rgba(3, 33, 142, 0.35) 0px 5px 15px;
+
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 800px) {
+
+    /*Tablets [601px -> 1200px]*/
+    .dashboard-container {
+        width: 80%;
+        height: 600px;
+        background-color: white;
+        margin: 0px auto;
+        display: grid;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        box-shadow: rgba(3, 33, 142, 0.35) 0px 5px 15px;
+    }
+
+    .result {
+        width: 100%;
+        height: 600px;
+        border-radius: 20px;
+        display: grid;
+        align-items: center;
+        grid-column: 1 / 2;
+    }
+
+    .result h3 {
+        font-size: 30px;
+    }
+
+    .cricle {
+        width: 200px;
+        height: 200px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 120px;
+    }
+
+    .cricle h1 {
+        font-size: 80px;
+        margin: 30px 0px 0px 0px;
+    }
+
+
+    .dashboard-container h2 {
+        font-size: 40px;
+        margin: 0px;
+    }
+
+    .result-desription {
+        font-size: 25px;
+        margin: 0px auto 50px auto;
+    }
+
+    .summary {
+        width: 100%;
+        height: 600px;
+        grid-column: 2 / 3;
+        display: grid;
+        align-items: flex-start;
+    }
+
+    .summary h2 {
+        text-align: center;
+        font-size: 50px;
+        margin: 0px;
+        position: relative;
+        top: 50px;
+    }
+
+    .reaction {
+        position: relative;
+        top: 50px;
+    }
+
+    .memory {
+        position: relative;
+        top: 30px;
+    }
+
+    .verbal {
+        position: relative;
+        top: 10px;
+    }
+
+    button {
+        position: relative;
+        top: 10px;
+    }
+
+}
+     
+      
+  </style>
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <!--Upper result dashboard start here-->
+        <div class="result">
+            <h3>Your Result</h3>
+
+            <div class="cricle">
+                <h1>76</h1>
+                <p>of 100</p>
+            </div>
+
+            <h2>Great</h2>
+            <p class="result-desription">
+                You scored higher than 65% of the people who
+                have taken these tests.
+            </p>
+        </div>
+        <!--Upper result dashboard ends here-->
+
+
+        <!--Lower summary dashboard starts here-->
+        <div class="summary">
+            <h2>Summary</h2>
+            <div class="reaction">
+                <img src="icon-reaction.svg" alt="">
+                <p>Reaction</p>
+                <p class="marks">82 <span>/100</span></p>
+            </div>
+
+            <div class="memory">
+                <img src="icon-memory.svg" alt="">
+                <p>Memory</p>
+                <p class="marks">90 <span>/100</span></p>
+            </div>
+
+            <div class="verbal">
+                <img src="icon-verbal.svg" alt="">
+                <p>Verbal</p>
+                <p class="marks">88 <span>/100</span></p>
+            </div>
+            <button>Continue</button>
+        </div>
+        <!--Lower summary dashboard ends here-->
+    </div>
+</body>
+</html>
